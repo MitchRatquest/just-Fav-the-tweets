@@ -22,5 +22,7 @@ make
 sudo make install
 cd ..
 mkdir ~/.elinks
+cp config.lua orig.config.lua
+cat orig.config.lua | sed "s/raul/$USER/g" > config.lua #oh raul yah silly goose
 cp *.lua ~/.elinks/.
 

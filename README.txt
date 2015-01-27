@@ -1,3 +1,15 @@
+Install:
+
+bash ./install.sh
+
+And then:
+
+elinks https://mobile.twitter.com/
+
+If it doesn't run the first time you can run elinks with:
+
+elinks -no-connect 1 -touch-files 0
+
 I was traveling on my old laptop and it couldn't handle the infinite scroll of web twitter so i decided to use elinks with lua scripting to strip the feed so its just the favs. I'm all about the favs.
 
 First you have to install lua5.0:
@@ -38,10 +50,4 @@ nano config.h.in
 ./configure
 make
 sudo make install
-
-Finally copy the .lua files to ~/.elinks and you should be good to go!
-
-If it doesn't run the first time you can run elinks with:
-
-elinks -no-connect 1 -touch-files 0
 

@@ -65,4 +65,5 @@
 
 --  dofile (elinks_home.."/md5checks.lua")
 --  dofile (elinks_home.."/remote.lua")
+--  The following line is hard coded to raul. I tried to handle it in the install.sh with a sed replace $user
       dofile ("/home/raul/.elinks/twitter.lua")

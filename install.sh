@@ -21,7 +21,8 @@ cat orig.config.h.in | sed "s/$_rssl/$_ssl/g" | sed "s/$_rlua/$_lua/g" | sed "s/
 make
 sudo make install
 cd ..
-mkdir ~/.elinks
+if [ ! -d ~/.elinks ]; then
+    mkdir ~/.elinks
 cp config.lua orig.config.lua
 cat orig.config.lua | sed "s/raul/$USER/g" > config.lua #oh raul yah silly goose
 cp *.lua ~/.elinks/.

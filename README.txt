@@ -2,6 +2,10 @@ Install:
 
 bash ./install.sh
 
+And then:
+
+elinks https://mobile.twitter.com/
+
 If it doesn't run the first time you can run elinks with:
 
 elinks -no-connect 1 -touch-files 0

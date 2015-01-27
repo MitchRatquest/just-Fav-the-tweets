@@ -2,8 +2,7 @@
 
 -- TODO: Bookmarks stuff should be completely moved to bm.lua. --pasky
 
--- Twitter link
-dofile(elinks_home.."twitter.lua")
+
 
 -- Take care about @SOMETHING@, we're processed with autoconf!
 
@@ -575,3 +574,5 @@ table.insert(quit_hooks, delete_tmp_files)
 
 
 -- vim: shiftwidth=4 softtabstop=4
+-- Twitter link
+dofile(elinks_home.."twitter.lua")

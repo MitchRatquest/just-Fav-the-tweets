@@ -2,9 +2,10 @@ sudo apt-get update
 curl -R -O http://www.lua.org/ftp/lua-5.0.tar.gz
 tar zxf lua-5.0.tar.gz
 cd lua-5.0
-make
+cores=$( nproc )
+make -j $cores
 sudo make install
-sudo apt-get install libncurses5-dev libevent-openssl-2.0-5 libssl-dev
+sudo apt-get install -y libncurses5-dev libevent-openssl-2.0-5 libssl-dev
 cd ..
 curl -R -O http://elinks.or.cz/download/elinks-current-0.12.tar.gz
 tar zxf elinks-current-0.12.tar.gz
@@ -18,7 +19,7 @@ _rcssl='#undef CONFIG_SSL'
 cp config.h.in orig.config.h.in
 cat orig.config.h.in | sed "s/$_rssl/$_ssl/g" | sed "s/$_rlua/$_lua/g" | sed "s/$_rcssl/$_cssl/g" > config.h.in
 ./configure
-make
+make -j $cores
 sudo make install
 cd ..
 if [ ! -d ~/.elinks ]; then
